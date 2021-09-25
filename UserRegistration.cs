@@ -6,17 +6,19 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace UserRegistrationRegex.cs
-{
-/// UC7 creating regular expression for validating password with at least one numeric value
+{/// <summary>
+/// UC9 creating regular expression for testing all email sample
+/// </summary>
     class UserRegistration
     {
         //writing the valid pattern
-        string password = "^[a-zA-Z]*[A-Z]*[0-9]+[a-zA-Z]*$";
-        string[] inputs = { "abCd@e1fgh", "Aa1bc", "AABCDEEEFgghik" };
-
+        string email = "^[a-zA-Z0-9]+[._+-]{0,1}[a-zA-Z0-9]+@[a-zA-Z0-9]{1,10}[.][a-zA-Z]{2,10}[.]*[a-zA-Z]*$";
+        string[] inputs = {"abc@yahoo.com","abc-100@yahoo.com", "abc.100@yahoo.com","abc111@abc.com", "abc-100@abc.net", "abc.100@abc.com.au","abc@1.com","abc@gmail.com.com", "abc+100@gmail.com",
+                            "abc","abc@.com.my","abc123@gmail.a","abc123@.com","abc123@.com.com",".abc@abc.com","abc()*@gmail.com","abc@%*.com","abc..2002@gmail.com","abc.@gmail.com","abc@abc@gmail.com","abc@gmail.com.1a","abc@gmail.com.aa.au" };
+       
         public void Validation()
         {
-            Regex regex1 = new Regex(password);
+            Regex regex1 = new Regex(email);
             Console.WriteLine("Validating Email id: ");
             ItarateLoop(inputs, regex1);
         }
