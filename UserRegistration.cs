@@ -12,7 +12,7 @@ namespace UserRegistrationRegex.cs
     {
         //writing the valid pattern
         string password = "^[a-zA-Z]*[A-Z]*[0-9]+[a-zA-Z]*$";
-        string[] inputs = { "abCde1fgh", "abc", "AABCDEEEFgghik" };
+        string[] inputs = { "abCd@e1fgh", "Aa1bc", "AABCDEEEFgghik" };
 
         public void Validation()
         {
