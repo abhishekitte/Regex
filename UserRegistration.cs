@@ -6,13 +6,13 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace UserRegistrationRegex.cs
-{
-/// UC4 creating regular expression for validating phone number
+
+/// UC6 creating regular expression for validating password with at least one uppercase
     class UserRegistration
     {
         //writing the valid pattern
-        string password = "^[a-zA-z]{8,}$";
-        string[] inputs = { "abcdefgh", "abc", "AABCDEEEfgghik" };
+        string password = "^[a-zA-Z]{1,}[A-Z]{1,}[a-zA-Z]*";
+        string[] inputs = { "abcdefgh", "abc", "AABCDEEEFgghik" };
 
         public void Validation()
         {
