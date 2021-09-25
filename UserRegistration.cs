@@ -11,12 +11,12 @@ namespace UserRegistrationRegex.cs
     class UserRegistration
     {
         //writing the valid pattern
-        string phone = "^[0-9]{2}[  ]*[0-9]{10}$";
-        string[] inputs = { "91 9967320888", "9930532545" };
+        string password = "^[a-zA-z]{8,}$";
+        string[] inputs = { "abcdefgh", "abc", "AABCDEEEfgghik" };
 
         public void Validation()
         {
-            Regex regex1 = new Regex(phone);
+            Regex regex1 = new Regex(password);
             Console.WriteLine("Validating Email id: ");
             ItarateLoop(inputs, regex1);
         }
