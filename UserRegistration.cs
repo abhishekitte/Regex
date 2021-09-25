@@ -7,17 +7,17 @@ using System.Threading.Tasks;
 
 namespace UserRegistrationRegex.cs
 {
-/// UC1 creating regular expression for validating user first name
+/// UC2 creating regular expression for validating user last name
     class UserRegistration
     {
         //writing the valid pattern
-        string pattern = "^[A-Z]+[a-z]{3,}$";
-        string[] inputs = { "Abhi",  "Abhishek", "Abh" };//Validating some Example
+        string pattern = "^[A-Z]{1}[a-z]{2,}$";
+        string[] inputs = { "Itte", "IItte", "Itttee", };//Validating some Example
 
         public void Validation()
         {
             Regex regex1 = new Regex(pattern);
-            Console.WriteLine("Validating First name: ");
+            Console.WriteLine("Validating Last name: ");
             ItarateLoop(inputs, regex1);
         }
         public void ItarateLoop(string[] arr, Regex regex1)
