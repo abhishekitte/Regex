@@ -4,15 +4,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace UserRegistrationRegex.cs
+namespace UserRegistrationProblem_REGEX
 {
     class Program
     {
         static void Main(string[] args)
         {
-            UserRegistration user = new UserRegistration();
-            user.Validation();
-            Console.ReadLine();
+
         }
     }
 }
