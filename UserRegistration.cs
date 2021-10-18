@@ -2,7 +2,9 @@
 using System.Text.RegularExpressions;
 
 namespace UserRegistrationRegex.cs
-{
+{/// <summary>
+/// UC12 for refactoring user registraion to give custom exception message
+/// </summary>
     public class UserRegistration
     {
         public string firstName;
@@ -22,18 +24,16 @@ namespace UserRegistrationRegex.cs
                 if (input)
                 {
                     Console.WriteLine(firstName + " ----->Valid");
-                    return "Valid";
+                    return firstName;
                 }
                 else
                 {
-                    Console.WriteLine(firstName + " ----->Invalid");
-                    return "Invalid";
+                    throw new CustomException(CustomException.ExceptionType.INVALID_FIRSTNAME, "Invalid Fist Name");
                 }
-
             }
-            catch (Exception ex)
+            catch (CustomException ex)
             {
-                return ex.Message;
+                return ex.message;
             }
         }
 
@@ -48,18 +48,16 @@ namespace UserRegistrationRegex.cs
                 if (input)
                 {
                     Console.WriteLine(lastName + " ----->Valid");
-                    return "Valid";
+                    return lastName;
                 }
                 else
                 {
-                    Console.WriteLine(lastName + " ----->Invalid");
-                    return "Invalid";
+                    throw new CustomException(CustomException.ExceptionType.INVALID_LASTNAME, "Invalid Last name");
                 }
-
             }
-            catch (Exception ex)
+            catch (CustomException ex)
             {
-                return ex.Message;
+                return ex.message;
             }
         }
 
@@ -73,17 +71,16 @@ namespace UserRegistrationRegex.cs
                 if (input)
                 {
                     Console.WriteLine(email + " ----->Valid");
-                    return "Valid";
+                    return email;
                 }
                 else
                 {
-                    Console.WriteLine(email + " ----->Invalid");
-                    return "Invalid";
+                    throw new CustomException(CustomException.ExceptionType.INVALID_EMAIL, "Invalid Email Id");
                 }
             }
-            catch (Exception ex)
+            catch (CustomException ex)
             {
-                return ex.Message;
+                return ex.message;
             }
         }
 
@@ -97,17 +94,16 @@ namespace UserRegistrationRegex.cs
                 if (input)
                 {
                     Console.WriteLine(mobile + " ----->Valid");
-                    return "Valid";
+                    return mobile;
                 }
                 else
                 {
-                    Console.WriteLine(mobile + " ----->Invalid");
-                    return "Invalid";
+                    throw new CustomException(CustomException.ExceptionType.INVALID_MOBILE, "Invalid Mobile number");
                 }
             }
-            catch (Exception ex)
+            catch (CustomException ex)
             {
-                return ex.Message;
+                return ex.message;
             }
         }
 
@@ -121,17 +117,16 @@ namespace UserRegistrationRegex.cs
                 if (input)
                 {
                     Console.WriteLine(paasWord + " ----->Valid");
-                    return "Valid";
+                    return paasWord;
                 }
                 else
                 {
-                    Console.WriteLine(paasWord + " ----->Invalid");
-                    return "Invalid";
+                    throw new CustomException(CustomException.ExceptionType.INVALID_PASSWORD, "Invalid Password");
                 }
             }
-            catch (Exception ex)
+            catch (CustomException ex)
             {
-                return ex.Message;
+                return ex.message;
             }
         }
     }
